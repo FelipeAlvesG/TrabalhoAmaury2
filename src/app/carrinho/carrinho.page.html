@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Carrinho de Compras </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-divider color="dark">
+    <ion-label>
+      Produtos
+    </ion-label>
+  </ion-item-divider>
+
+  <ion-item-divider>
+    <ion-label>
+      <ion-item *ngFor="let produto of carrinho">
+        <ion-avatar slot="start">
+          <img src="{{produto.img}}">
+        </ion-avatar>
+        <ion-label>{{produto.nome}} || Valor:R${{produto.vlr}},00</ion-label>
+      </ion-item>
+    </ion-label>
+  </ion-item-divider>
+
+  <ion-item-divider color="dark">
+    <ion-label>
+      Dados para Entrega
+    </ion-label>
+  </ion-item-divider>
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-label position="stacked">Nome Completo <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text"></ion-input>
+      <ion-label position="stacked">Telefone <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text"></ion-input>
+      <ion-label position="stacked">Endereço de entrega <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="confirmaPedido()">Confirmar Pedido </ion-button>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="carrinho()">
+        <ion-icon icon-only name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Lista de Produtos</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of produtos" (click)="tela(item)">
+      <ion-avatar slot="start">
+        <img src="{{item.img}}">
+      </ion-avatar>
+      <ion-label>
+        <h2>Nome: {{item.nome}}</h2>
+        <h3>Valor:R$ {{item.vlr}},00</h3>
+        <p>Descrição: {{item.desc}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
